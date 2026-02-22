@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Zayora website - an orange-themed tech product website for bluetooth earbuds and smartwatches, founded by Yash Jaiswal. Features product showcase, partner logos (YouTube, Bharat Ke Founder, MX Player, Blinkit), contact information, and coming soon section.",
+  "architectural_notes": [
+    "Orange theme for tech product website",
+    "Product showcase for bluetooth earbuds and smartwatches",
+    "Partner/platform logo integration section"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Modern bluetooth earbuds product photo on clean background, tech aesthetic (earbuds-product.dim_800x800.png)\n- Modern smartwatch product photo on clean background, tech aesthetic (smartwatch-product.dim_800x800.png)\n- YouTube logo in official red and white colors (youtube-logo.dim_200x200.png)\n- Bharat Ke Founder logo in original brand colors (bharat-ke-founder-logo.dim_200x200.png)\n- MX Player logo in official brand colors (mx-player-logo.dim_200x200.png)\n- Blinkit logo in official yellow and green brand colors (blinkit-logo.dim_200x200.png)\n- Hero banner image with orange tech theme, modern gadgets aesthetic (hero-banner.dim_1920x600.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-homepage-layout-with-orange-tech-product-theme-featuring-hero-section-product-showcase-partner-logos-section-and-contact-information-footer",
+      "title": "Create homepage layout with orange tech product theme featuring hero section, product showcase, partner logos section, and contact information footer",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-company-information-section-displaying-founder-name-yash-jaiswal-and-company-name-zayora",
+      "title": "Add company information section displaying founder name 'Yash Jaiswal' and company name 'Zayora'",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-product-showcase-section-featuring-bluetooth-earbuds-and-smartwatch-with-product-images",
+      "title": "Create product showcase section featuring bluetooth earbuds and smartwatch with product images",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-partner-logos-section-displaying-youtube-logo-bharat-ke-founder-logo-and-mx-player-logo-in-full-color",
+      "title": "Add partner logos section displaying YouTube logo, Bharat Ke Founder logo, and MX Player logo in full color",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-coming-soon-on-blinkit-section-with-blinkit-logo-in-color",
+      "title": "Add 'Coming Soon on Blinkit' section with Blinkit logo in color",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-contact-information-section-displaying-customer-care-number-9919031626-and-email-zayora11-gmail-com",
+      "title": "Add contact information section displaying customer care number 9919031626 and email zayora11@gmail.com",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-all-generated-product-images-partner-logos-and-brand-assets-as-static-files-from-frontend-public-assets-generated-directory",
+      "title": "Render all generated product images, partner logos, and brand assets as static files from frontend/public/assets/generated directory",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create orange-themed website layout for tech products",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add company info section with founder name (Yash Jaiswal)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Display product images for bluetooth earbuds and smartwatch",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add partner logos in color: YouTube, Bharat Ke Founder, MX Player",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add Blinkit logo with 'Coming Soon on Blinkit' section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add contact section with phone (9919031626) and email (zayora11@gmail.com)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Zayora",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

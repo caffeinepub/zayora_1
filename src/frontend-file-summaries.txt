@@ -1,0 +1,12 @@
+{
+  "frontend/src/App.tsx": "Main application component that renders the complete single-page website layout with hero, products, partners, coming soon, and contact sections.",
+  "frontend/src/components/HeroSection.tsx": "Hero section component featuring the Zayora brand name, founder information, and call-to-action buttons with an orange gradient background.",
+  "frontend/src/components/ProductShowcase.tsx": "Product showcase section that displays the bluetooth earbuds and smartwatch products in a responsive grid layout.",
+  "frontend/src/components/ProductCard.tsx": "Reusable product card component with image, description, and feature list with orange accent styling and hover effects.",
+  "frontend/src/components/PartnerLogos.tsx": "Partner logos section displaying YouTube, Bharat Ke Founder, and MX Player logos in a centered horizontal layout.",
+  "frontend/src/components/ComingSoonSection.tsx": "Coming soon section announcing Blinkit availability with the Blinkit logo and orange gradient background.",
+  "frontend/src/components/ContactFooter.tsx": "Footer component with contact information (phone and email), brand details, and caffeine.ai attribution with proper UTM tracking.",
+  "frontend/src/index.css": "Global styles with OKLCH-based orange color system for both light and dark modes, featuring orange hues throughout the design tokens.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with custom orange color palette (50-950 shades) using OKLCH values for consistent theming.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for React Query hooks (currently empty as no backend interaction is needed for this static website)."
+}

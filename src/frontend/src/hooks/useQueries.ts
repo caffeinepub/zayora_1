@@ -1,0 +1,3 @@
+// This file is for React Query hooks to interact with the backend
+// Currently no backend functionality is needed for this static website
+export {};
