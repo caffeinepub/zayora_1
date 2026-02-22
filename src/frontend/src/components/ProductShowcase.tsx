@@ -1,20 +1,14 @@
 import ProductCard from './ProductCard';
+import { useProducts } from '../hooks/useQueries';
+import { Loader2 } from 'lucide-react';
+import type { Product } from '../backend';
 
-export default function ProductShowcase() {
-  const products = [
-    {
-      name: 'Bluetooth Earbuds',
-      description: 'Premium wireless earbuds with crystal-clear sound, active noise cancellation, and all-day battery life. Perfect for music lovers and professionals.',
-      image: '/assets/generated/earbuds-product.dim_800x800.png',
-      features: ['Active Noise Cancellation', 'Up to 24H Battery', 'Premium Sound Quality']
-    },
-    {
-      name: 'Smart Watch',
-      description: 'Advanced smartwatch with health tracking, fitness monitoring, and seamless connectivity. Stay connected and healthy with style.',
-      image: '/assets/generated/smartwatch-product.dim_800x800.png',
-      features: ['Health Monitoring', 'Fitness Tracking', 'Smart Notifications']
-    }
-  ];
+interface ProductShowcaseProps {
+  onCheckout: (product: Product) => void;
+}
+
+export default function ProductShowcase({ onCheckout }: ProductShowcaseProps) {
+  const { data: products, isLoading, error } = useProducts();
 
   return (
     <section id="products" className="bg-background py-20">
@@ -27,12 +21,32 @@ export default function ProductShowcase() {
             Discover our range of cutting-edge tech products designed to enhance your lifestyle
           </p>
         </div>
-        
-        <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
-          {products.map((product) => (
-            <ProductCard key={product.name} {...product} />
-          ))}
-        </div>
+
+        {isLoading && (
+          <div className="flex justify-center py-12">
+            <Loader2 className="h-12 w-12 animate-spin text-orange-500" />
+          </div>
+        )}
+
+        {error && (
+          <div className="mx-auto max-w-md rounded-lg border-2 border-destructive bg-destructive/10 p-6 text-center">
+            <p className="text-destructive">Failed to load products. Please try again later.</p>
+          </div>
+        )}
+
+        {products && products.length > 0 && (
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+            {products.map((product) => (
+              <ProductCard key={product.id.toString()} product={product} onCheckout={onCheckout} />
+            ))}
+          </div>
+        )}
+
+        {products && products.length === 0 && !isLoading && (
+          <div className="mx-auto max-w-md rounded-lg border-2 border-muted bg-muted/10 p-6 text-center">
+            <p className="text-muted-foreground">No products available at the moment.</p>
+          </div>
+        )}
       </div>
     </section>
   );

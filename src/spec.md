@@ -1,15 +1,14 @@
 # Specification
 
 ## Summary
-**Goal:** Create a modern tech products website for Zayora with an orange theme, showcasing bluetooth earbuds and smartwatch products.
+**Goal:** Add a third product (white/light blue wireless earbuds) and implement cash on delivery checkout with backend product and order management.
 
 **Planned changes:**
-- Build homepage with hero section, product showcase, partner logos, and contact footer
-- Display company name "Zayora" and founder "Yash Jaiswal"
-- Add product cards for bluetooth earbuds and smartwatch with product images
-- Include partner logos section with YouTube, Bharat Ke Founder, and MX Player logos in color
-- Add "Coming Soon on Blinkit" section with Blinkit logo
-- Display contact information: phone (9919031626) and email (zayora11@gmail.com)
-- Apply orange color scheme consistently throughout the design
+- Add white/light blue wireless earbuds product with MRP ₹499 to product showcase
+- Create backend data model for products with id, name, description, image, MRP, features, and availability
+- Implement cash on delivery checkout system with ₹50 delivery charge
+- Create backend order management system to store customer orders with product details, delivery address, phone number, and order status
+- Fetch and display product listings from backend on frontend
+- Render the uploaded wireless earbuds product image as a static asset
 
-**User-visible outcome:** A single-page website showcasing Zayora's tech products (earbuds and smartwatch) with company information, partner logos, upcoming Blinkit availability, and contact details, all styled with an orange tech aesthetic.
+**User-visible outcome:** Users can browse three products (two existing earbuds/smartwatch plus new white/light blue earbuds), see MRP pricing, and complete purchases using cash on delivery checkout with a ₹50 delivery charge.

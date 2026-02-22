@@ -1,15 +1,18 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
-  "summary": "Zayora website - an orange-themed tech product website for bluetooth earbuds and smartwatches, founded by Yash Jaiswal. Features product showcase, partner logos (YouTube, Bharat Ke Founder, MX Player, Blinkit), contact information, and coming soon section.",
+  "projectStateVersion": 5,
+  "summary": "Zayora website - an orange-themed tech product website for bluetooth earbuds and smartwatches, founded by Yash Jaiswal. Features product showcase, partner logos (YouTube, Bharat Ke Founder, MX Player, Blinkit), contact information, and coming soon section. Now includes e-commerce functionality with product listing, cash on delivery checkout, and delivery charges.",
   "architectural_notes": [
     "Orange theme for tech product website",
     "Product showcase for bluetooth earbuds and smartwatches",
-    "Partner/platform logo integration section"
+    "Partner/platform logo integration section",
+    "E-commerce functionality with product listing and pricing",
+    "Cash on delivery payment method only",
+    "Fixed delivery charge of ₹50 per order"
   ],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Modern bluetooth earbuds product photo on clean background, tech aesthetic (earbuds-product.dim_800x800.png)\n- Modern smartwatch product photo on clean background, tech aesthetic (smartwatch-product.dim_800x800.png)\n- YouTube logo in official red and white colors (youtube-logo.dim_200x200.png)\n- Bharat Ke Founder logo in original brand colors (bharat-ke-founder-logo.dim_200x200.png)\n- MX Player logo in official brand colors (mx-player-logo.dim_200x200.png)\n- Blinkit logo in official yellow and green brand colors (blinkit-logo.dim_200x200.png)\n- Hero banner image with orange tech theme, modern gadgets aesthetic (hero-banner.dim_1920x600.png)",
+  "imageRequirements": "## Required Images\n- White and light blue wireless earbuds with transparent charging case showing digital display, product photography style on neutral background (wireless-earbuds-white-blue.dim_800x800.png)",
   "existing_features": [
     {
       "id": "feature-create-homepage-layout-with-orange-tech-product-theme-featuring-hero-section-product-showcase-partner-logos-section-and-contact-information-footer",
@@ -66,6 +69,38 @@
         "REQ-7"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-add-a-third-product-to-the-product-showcase-featuring-the-white-light-blue-wireless-earbuds-from-the-uploaded-image-with-mrp-499",
+      "title": "Add a third product to the product showcase featuring the white/light blue wireless earbuds from the uploaded image with MRP ₹499",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-cash-on-delivery-checkout-system-with-delivery-charge-of-50",
+      "title": "Implement cash on delivery checkout system with delivery charge of ₹50",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fetch-and-display-product-listings-from-backend-on-the-product-showcase-section",
+      "title": "Fetch and display product listings from backend on the product showcase section",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-uploaded-white-light-blue-wireless-earbuds-product-image-as-a-static-asset-from-frontend-public-assets-generated-directory",
+      "title": "Render the uploaded white/light blue wireless earbuds product image as a static asset from frontend/public/assets/generated directory",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -103,6 +138,40 @@
       "id": "AR-6",
       "summary": "Add contact section with phone (9919031626) and email (zayora11@gmail.com)",
       "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add product listing with MRP ₹499",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Implement cash on delivery checkout system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add delivery charge of ₹50 to checkout",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Create backend data model for products with fields: id, name, description, image path, MRP, features array, and availability status",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Create order management system in backend to store customer orders with product details, delivery address, phone number, and order status",
+      "reqIds": [
+        "REQ-11"
+      ],
       "status": "pending"
     }
   ],

@@ -1,156 +1,134 @@
 {
   "kind": "build_request",
-  "title": "Create Zayora tech products website with orange theme",
+  "title": "Add third product with e-commerce functionality",
   "projectName": "Zayora",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Create homepage layout with orange tech product theme featuring hero section, product showcase, partner logos section, and contact information footer",
-      "target": "frontend",
+      "id": "REQ-8",
+      "text": "Add a third product to the product showcase featuring the white/light blue wireless earbuds from the uploaded image with MRP ₹499",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-1"
+          "user-message"
         ],
         "quotes": [
-          "website theme is orange tech product"
+          "Add this product and MRP is ₹499"
         ]
       },
       "acceptanceCriteria": [
-        "Orange color scheme is consistently applied throughout the website",
-        "Layout includes distinct sections: hero, products, partners, contact",
-        "Design reflects modern tech product aesthetic"
+        "Product card displays the white/light blue wireless earbuds image",
+        "Product shows MRP of ₹499",
+        "Product appears in the product showcase section alongside existing earbuds and smartwatch"
       ]
     },
     {
-      "id": "REQ-2",
-      "text": "Add company information section displaying founder name 'Yash Jaiswal' and company name 'Zayora'",
-      "target": "frontend",
+      "id": "REQ-9",
+      "text": "Create backend data model for products with fields: id, name, description, image path, MRP, features array, and availability status",
+      "target": "backend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "user-message"
         ],
         "quotes": [
-          "A founder is yash jaiswal"
+          "List the product"
         ]
       },
       "acceptanceCriteria": [
-        "Founder name 'Yash Jaiswal' is prominently displayed",
-        "Company name 'Zayora' appears in header or hero section"
+        "Motoko type definition for Product includes all required fields",
+        "Backend stores product data persistently",
+        "Backend provides query method to retrieve all products"
       ]
     },
     {
-      "id": "REQ-3",
-      "text": "Create product showcase section featuring bluetooth earbuds and smartwatch with product images",
-      "target": "frontend",
+      "id": "REQ-10",
+      "text": "Implement cash on delivery checkout system with delivery charge of ₹50",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-1"
+          "user-message"
         ],
         "quotes": [
-          "company product is bluetooth earbuds and Smart watch",
-          "Add images of product"
+          "Check out only cash on delivery",
+          "delivery charge ₹50"
         ]
       },
       "acceptanceCriteria": [
-        "Product cards or tiles display bluetooth earbuds",
-        "Product cards or tiles display smartwatch",
-        "Each product has an accompanying image"
+        "Each product card includes a 'Cash on Delivery' checkout button",
+        "Checkout flow clearly displays product MRP + ₹50 delivery charge as total",
+        "Checkout only accepts Cash on Delivery payment method",
+        "Order confirmation includes delivery charge breakdown"
       ]
     },
     {
-      "id": "REQ-4",
-      "text": "Add partner logos section displaying YouTube logo, Bharat Ke Founder logo, and MX Player logo in full color",
-      "target": "frontend",
+      "id": "REQ-11",
+      "text": "Create order management system in backend to store customer orders with product details, delivery address, phone number, and order status",
+      "target": "backend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "user-message"
         ],
         "quotes": [
-          "add youtube logo and bharat ke founder logo and mx players logo in colour"
+          "Check out only cash on delivery"
         ]
       },
       "acceptanceCriteria": [
-        "YouTube logo is displayed in official brand colors",
-        "Bharat Ke Founder logo is displayed in color",
-        "MX Player logo is displayed in color",
-        "Logos are arranged in a visually balanced layout"
+        "Backend stores orders with all required fields",
+        "Each order includes product ID, customer details, total amount, delivery charge, and timestamp",
+        "Backend provides methods to create new orders and retrieve order history"
       ]
     },
     {
-      "id": "REQ-5",
-      "text": "Add 'Coming Soon on Blinkit' section with Blinkit logo in color",
+      "id": "REQ-12",
+      "text": "Fetch and display product listings from backend on the product showcase section",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "user-message"
         ],
         "quotes": [
-          "Blinkit logo in colour coming soon on blinkit"
+          "List the product"
         ]
       },
       "acceptanceCriteria": [
-        "Blinkit logo is displayed in official brand colors",
-        "Section includes 'Coming Soon on Blinkit' text",
-        "Section is visually distinct from other content"
+        "Frontend queries backend for product list using React Query",
+        "Product showcase section dynamically renders ProductCard components from backend data",
+        "Loading and error states are handled appropriately"
       ]
     },
     {
-      "id": "REQ-6",
-      "text": "Add contact information section displaying customer care number 9919031626 and email zayora11@gmail.com",
+      "id": "REQ-13",
+      "text": "Render the uploaded white/light blue wireless earbuds product image as a static asset from frontend/public/assets/generated directory",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "user-message"
         ],
         "quotes": [
-          "Customer care number -9919031626",
-          "Gmail zayora11@gmail.com"
+          "Add this product"
         ]
       },
       "acceptanceCriteria": [
-        "Phone number 9919031626 is displayed with appropriate formatting",
-        "Email zayora11@gmail.com is displayed and clickable as mailto link",
-        "Contact section is easily identifiable in footer or dedicated section"
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "text": "Render all generated product images, partner logos, and brand assets as static files from frontend/public/assets/generated directory",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ]
-      },
-      "acceptanceCriteria": [
-        "All generated images are loaded from /assets/generated/ path",
-        "Images are properly integrated into their respective sections",
-        "Image loading is optimized with appropriate dimensions"
+        "Generated product image is saved in frontend/public/assets/generated/",
+        "Product card references the generated image file correctly",
+        "Image displays with appropriate dimensions and quality"
       ]
     }
   ],
   "constraints": [
-    "Orange must be the primary theme color throughout the design",
-    "All logos must maintain official brand colors",
-    "Contact information must be displayed exactly as provided: 9919031626 and zayora11@gmail.com"
+    "Only Cash on Delivery payment method is allowed",
+    "Delivery charge must be exactly ₹50 for all orders",
+    "Maintain single-actor backend architecture in backend/main.mo"
   ],
   "nonGoals": [
-    "E-commerce functionality or shopping cart",
-    "User authentication or login system",
-    "Product inventory management",
-    "Payment processing integration",
-    "Real-time order tracking"
+    "Online payment integration (credit card, UPI, wallets)",
+    "Multiple shipping options or variable delivery charges",
+    "User account creation or authentication for checkout",
+    "Inventory management system"
   ],
   "imageRequirements": {
     "required": [
-      "Modern bluetooth earbuds product photo on clean background, tech aesthetic (earbuds-product.dim_800x800.png)",
-      "Modern smartwatch product photo on clean background, tech aesthetic (smartwatch-product.dim_800x800.png)",
-      "YouTube logo in official red and white colors (youtube-logo.dim_200x200.png)",
-      "Bharat Ke Founder logo in original brand colors (bharat-ke-founder-logo.dim_200x200.png)",
-      "MX Player logo in official brand colors (mx-player-logo.dim_200x200.png)",
-      "Blinkit logo in official yellow and green brand colors (blinkit-logo.dim_200x200.png)",
-      "Hero banner image with orange tech theme, modern gadgets aesthetic (hero-banner.dim_1920x600.png)"
+      "White and light blue wireless earbuds with transparent charging case showing digital display, product photography style on neutral background (wireless-earbuds-white-blue.dim_800x800.png)"
     ],
     "edits": []
   }

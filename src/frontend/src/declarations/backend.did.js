@@ -8,10 +8,84 @@
 
 import { IDL } from '@icp-sdk/core/candid';
 
-export const idlService = IDL.Service({});
+export const Product = IDL.Record({
+  'id' : IDL.Nat,
+  'mrp' : IDL.Nat,
+  'features' : IDL.Vec(IDL.Text),
+  'imagePath' : IDL.Text,
+  'name' : IDL.Text,
+  'description' : IDL.Text,
+  'available' : IDL.Bool,
+});
+export const OrderStatus = IDL.Variant({
+  'shipped' : IDL.Null,
+  'cancelled' : IDL.Null,
+  'pending' : IDL.Null,
+  'delivered' : IDL.Null,
+});
+export const Order = IDL.Record({
+  'customerName' : IDL.Text,
+  'status' : OrderStatus,
+  'productId' : IDL.Nat,
+  'orderId' : IDL.Nat,
+  'totalAmount' : IDL.Nat,
+  'address' : IDL.Text,
+  'phone' : IDL.Text,
+});
+
+export const idlService = IDL.Service({
+  'getAllProducts' : IDL.Func([], [IDL.Vec(Product)], ['query']),
+  'getOrder' : IDL.Func([IDL.Nat], [IDL.Opt(Order)], ['query']),
+  'getOrderStatus' : IDL.Func([IDL.Nat], [IDL.Opt(OrderStatus)], ['query']),
+  'getProduct' : IDL.Func([IDL.Nat], [IDL.Opt(Product)], ['query']),
+  'placeOrder' : IDL.Func(
+      [IDL.Nat, IDL.Text, IDL.Text, IDL.Text],
+      [IDL.Opt(IDL.Nat)],
+      [],
+    ),
+  'updateOrderStatus' : IDL.Func([IDL.Nat, OrderStatus], [IDL.Bool], []),
+});
 
 export const idlInitArgs = [];
 
-export const idlFactory = ({ IDL }) => { return IDL.Service({}); };
+export const idlFactory = ({ IDL }) => {
+  const Product = IDL.Record({
+    'id' : IDL.Nat,
+    'mrp' : IDL.Nat,
+    'features' : IDL.Vec(IDL.Text),
+    'imagePath' : IDL.Text,
+    'name' : IDL.Text,
+    'description' : IDL.Text,
+    'available' : IDL.Bool,
+  });
+  const OrderStatus = IDL.Variant({
+    'shipped' : IDL.Null,
+    'cancelled' : IDL.Null,
+    'pending' : IDL.Null,
+    'delivered' : IDL.Null,
+  });
+  const Order = IDL.Record({
+    'customerName' : IDL.Text,
+    'status' : OrderStatus,
+    'productId' : IDL.Nat,
+    'orderId' : IDL.Nat,
+    'totalAmount' : IDL.Nat,
+    'address' : IDL.Text,
+    'phone' : IDL.Text,
+  });
+  
+  return IDL.Service({
+    'getAllProducts' : IDL.Func([], [IDL.Vec(Product)], ['query']),
+    'getOrder' : IDL.Func([IDL.Nat], [IDL.Opt(Order)], ['query']),
+    'getOrderStatus' : IDL.Func([IDL.Nat], [IDL.Opt(OrderStatus)], ['query']),
+    'getProduct' : IDL.Func([IDL.Nat], [IDL.Opt(Product)], ['query']),
+    'placeOrder' : IDL.Func(
+        [IDL.Nat, IDL.Text, IDL.Text, IDL.Text],
+        [IDL.Opt(IDL.Nat)],
+        [],
+      ),
+    'updateOrderStatus' : IDL.Func([IDL.Nat, OrderStatus], [IDL.Bool], []),
+  });
+};
 
 export const init = ({ IDL }) => { return []; };

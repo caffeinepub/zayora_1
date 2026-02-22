@@ -10,7 +10,36 @@ import type { ActorMethod } from '@icp-sdk/core/agent';
 import type { IDL } from '@icp-sdk/core/candid';
 import type { Principal } from '@icp-sdk/core/principal';
 
-export interface _SERVICE {}
+export interface Order {
+  'customerName' : string,
+  'status' : OrderStatus,
+  'productId' : bigint,
+  'orderId' : bigint,
+  'totalAmount' : bigint,
+  'address' : string,
+  'phone' : string,
+}
+export type OrderStatus = { 'shipped' : null } |
+  { 'cancelled' : null } |
+  { 'pending' : null } |
+  { 'delivered' : null };
+export interface Product {
+  'id' : bigint,
+  'mrp' : bigint,
+  'features' : Array<string>,
+  'imagePath' : string,
+  'name' : string,
+  'description' : string,
+  'available' : boolean,
+}
+export interface _SERVICE {
+  'getAllProducts' : ActorMethod<[], Array<Product>>,
+  'getOrder' : ActorMethod<[bigint], [] | [Order]>,
+  'getOrderStatus' : ActorMethod<[bigint], [] | [OrderStatus]>,
+  'getProduct' : ActorMethod<[bigint], [] | [Product]>,
+  'placeOrder' : ActorMethod<[bigint, string, string, string], [] | [bigint]>,
+  'updateOrderStatus' : ActorMethod<[bigint, OrderStatus], boolean>,
+}
 export declare const idlService: IDL.ServiceClass;
 export declare const idlInitArgs: IDL.Type[];
 export declare const idlFactory: IDL.InterfaceFactory;

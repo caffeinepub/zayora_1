@@ -1,177 +1,90 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Zayora Tech Products Website with Orange Theme",
+  "title": "Add third product with e-commerce functionality",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Create homepage layout with orange tech product theme featuring hero section, product showcase, partner logos section, and contact information footer",
+      "id": "REQ-8",
+      "summary": "Add a third product to the product showcase featuring the white/light blue wireless earbuds from the uploaded image with MRP ₹499",
       "acceptanceCriteria": [
-        "Orange color scheme is consistently applied throughout the website",
-        "Layout includes distinct sections: hero, products, partners, contact",
-        "Design reflects modern tech product aesthetic"
+        "Product card displays the white/light blue wireless earbuds image",
+        "Product shows MRP of ₹499",
+        "Product appears in the product showcase section alongside existing earbuds and smartwatch"
       ],
       "file_operations": [
+        {
+          "path": "frontend/src/components/ProductShowcase.tsx",
+          "operation": "modify",
+          "description": "Update ProductShowcase to fetch products from backend using React Query and dynamically render ProductCard components. Replace hardcoded products with dynamic data from backend.getAllProducts(). Reference the generated image file at frontend/public/assets/generated/wireless-earbuds-white-blue.dim_800x800.png for the third product. Handle loading and error states appropriately."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Implement cash on delivery checkout system with delivery charge of ₹50",
+      "acceptanceCriteria": [
+        "Each product card includes a 'Cash on Delivery' checkout button",
+        "Checkout flow clearly displays product MRP + ₹50 delivery charge as total",
+        "Checkout only accepts Cash on Delivery payment method",
+        "Order confirmation includes delivery charge breakdown"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Add a 'Cash on Delivery' button to the ProductCard component. When clicked, navigate to checkout flow. Display product MRP clearly on the card. Pass product data (id, name, mrp, imagePath) to the checkout component via navigation state or props."
+        },
+        {
+          "path": "frontend/src/components/CheckoutForm.tsx",
+          "operation": "create",
+          "description": "Create checkout form component that collects customer name, delivery address, and phone number. Display order summary showing product MRP, ₹50 delivery charge, and total amount. Include form validation for required fields. On submission, call backend.placeOrder() with product ID and customer details. Handle success and error states, then navigate to order confirmation."
+        },
+        {
+          "path": "frontend/src/components/OrderConfirmation.tsx",
+          "operation": "create",
+          "description": "Create order confirmation component that displays order success message, order ID, product details, customer information, and cost breakdown (MRP + ₹50 delivery charge = total). Include a button to return to product showcase. Accept order data via navigation state or props."
+        },
         {
           "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Restructure App component to include distinct sections: hero section, product showcase, partner logos, coming soon section, and contact footer. Wire all sections into a single-page layout with orange tech product theme."
-        },
+          "description": "Wire CheckoutForm and OrderConfirmation components into the application. Add routing or conditional rendering to show CheckoutForm when user clicks checkout button and OrderConfirmation after successful order placement. Ensure proper navigation flow between ProductShowcase, CheckoutForm, and OrderConfirmation components."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Fetch and display product listings from backend on the product showcase section",
+      "acceptanceCriteria": [
+        "Frontend queries backend for product list using React Query",
+        "Product showcase section dynamically renders ProductCard components from backend data",
+        "Loading and error states are handled appropriately"
+      ],
+      "file_operations": [
         {
-          "path": "frontend/src/index.css",
+          "path": "frontend/src/hooks/useQueries.ts",
           "operation": "modify",
-          "description": "Define orange color scheme as CSS custom properties (--primary-orange, --secondary-orange, --accent-orange) and apply modern tech product styling throughout. Ensure orange theme is consistently used across all sections."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Extend Tailwind theme to include custom orange color palette variants for primary, secondary, and accent colors matching the tech product aesthetic."
-        },
-        {
-          "path": "frontend/src/components/HeroSection.tsx",
-          "operation": "create",
-          "description": "Create hero section component with orange gradient background featuring company name Zayora, tagline, and hero banner image from frontend/public/assets/generated/hero-banner.dim_1920x600.png"
+          "description": "Add React Query hook useProducts() that calls backend.getAllProducts() to fetch product list. Return query object with data, isLoading, and error states. Configure appropriate cache time and refetch settings for product data."
         },
         {
           "path": "frontend/src/components/ProductShowcase.tsx",
-          "operation": "create",
-          "description": "Create product showcase section component displaying product cards in a responsive grid layout with orange accent highlights"
-        },
-        {
-          "path": "frontend/src/components/PartnerLogos.tsx",
-          "operation": "create",
-          "description": "Create partner logos section component displaying logos in a horizontal layout with appropriate spacing and hover effects"
-        },
-        {
-          "path": "frontend/src/components/ComingSoonSection.tsx",
-          "operation": "create",
-          "description": "Create coming soon section component for Blinkit availability announcement with orange themed styling"
-        },
-        {
-          "path": "frontend/src/components/ContactFooter.tsx",
-          "operation": "create",
-          "description": "Create footer component with contact information section using orange theme accents and modern tech styling"
+          "operation": "modify",
+          "description": "Import and use the useProducts() hook to fetch products from backend. Render loading state while fetching, error state if query fails, and map over products array to render ProductCard components with data from backend (id, name, description, imagePath, mrp, features, available). Pass all required props to ProductCard including the product object."
         }
       ]
     },
     {
-      "id": "REQ-2",
-      "summary": "Add company information section displaying founder name 'Yash Jaiswal' and company name 'Zayora'",
+      "id": "REQ-13",
+      "summary": "Render the uploaded white/light blue wireless earbuds product image as a static asset from frontend/public/assets/generated directory",
       "acceptanceCriteria": [
-        "Founder name 'Yash Jaiswal' is prominently displayed",
-        "Company name 'Zayora' appears in header or hero section"
+        "Generated product image is saved in frontend/public/assets/generated/",
+        "Product card references the generated image file correctly",
+        "Image displays with appropriate dimensions and quality"
       ],
       "file_operations": [
-        {
-          "path": "frontend/src/components/HeroSection.tsx",
-          "operation": "modify",
-          "description": "Add company name 'Zayora' as prominent heading in hero section and include founder information 'Founded by Yash Jaiswal' as subheading or tagline"
-        },
-        {
-          "path": "frontend/src/components/ContactFooter.tsx",
-          "operation": "modify",
-          "description": "Include company name 'Zayora' and founder credit 'Yash Jaiswal' in footer branding area"
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Create product showcase section featuring bluetooth earbuds and smartwatch with product images",
-      "acceptanceCriteria": [
-        "Product cards or tiles display bluetooth earbuds",
-        "Product cards or tiles display smartwatch",
-        "Each product has an accompanying image"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/ProductShowcase.tsx",
-          "operation": "modify",
-          "description": "Add product cards for bluetooth earbuds using image frontend/public/assets/generated/earbuds-product.dim_800x800.png and smartwatch using image frontend/public/assets/generated/smartwatch-product.dim_800x800.png. Include product names, brief descriptions, and orange themed card styling."
-        },
-        {
-          "path": "frontend/src/components/ProductCard.tsx",
-          "operation": "create",
-          "description": "Create reusable product card component accepting product name, description, and image path. Apply orange accent borders and hover effects with modern tech aesthetic."
-        }
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "summary": "Add partner logos section displaying YouTube logo, Bharat Ke Founder logo, and MX Player logo in full color",
-      "acceptanceCriteria": [
-        "YouTube logo is displayed in official brand colors",
-        "Bharat Ke Founder logo is displayed in color",
-        "MX Player logo is displayed in color",
-        "Logos are arranged in a visually balanced layout"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/PartnerLogos.tsx",
-          "operation": "modify",
-          "description": "Add partner logos using images frontend/public/assets/generated/youtube-logo.dim_200x200.png, frontend/public/assets/generated/bharat-ke-founder-logo.dim_200x200.png, and frontend/public/assets/generated/mx-player-logo.dim_200x200.png. Arrange in a horizontally centered, responsive layout with equal spacing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "summary": "Add 'Coming Soon on Blinkit' section with Blinkit logo in color",
-      "acceptanceCriteria": [
-        "Blinkit logo is displayed in official brand colors",
-        "Section includes 'Coming Soon on Blinkit' text",
-        "Section is visually distinct from other content"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/ComingSoonSection.tsx",
-          "operation": "modify",
-          "description": "Add Blinkit logo from frontend/public/assets/generated/blinkit-logo.dim_200x200.png with 'Coming Soon on Blinkit' heading. Style with orange background or border to create visual distinction from other sections."
-        }
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "summary": "Add contact information section displaying customer care number 9919031626 and email zayora11@gmail.com",
-      "acceptanceCriteria": [
-        "Phone number 9919031626 is displayed with appropriate formatting",
-        "Email zayora11@gmail.com is displayed and clickable as mailto link",
-        "Contact section is easily identifiable in footer or dedicated section"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/ContactFooter.tsx",
-          "operation": "modify",
-          "description": "Add contact information displaying phone number '9919031626' with tel: link and email 'zayora11@gmail.com' with mailto: link. Include contact icons and orange accent styling for visibility."
-        }
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "summary": "Render all generated product images, partner logos, and brand assets as static files from frontend/public/assets/generated directory",
-      "acceptanceCriteria": [
-        "All generated images are loaded from /assets/generated/ path",
-        "Images are properly integrated into their respective sections",
-        "Image loading is optimized with appropriate dimensions"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/HeroSection.tsx",
-          "operation": "modify",
-          "description": "Reference hero banner image from frontend/public/assets/generated/hero-banner.dim_1920x600.png with appropriate img tag and alt text for accessibility"
-        },
         {
           "path": "frontend/src/components/ProductCard.tsx",
           "operation": "modify",
-          "description": "Ensure product images are loaded from frontend/public/assets/generated/ directory with proper width and height attributes for optimization"
-        },
-        {
-          "path": "frontend/src/components/PartnerLogos.tsx",
-          "operation": "modify",
-          "description": "Ensure all partner logo images are loaded from frontend/public/assets/generated/ directory with consistent sizing and alt text"
-        },
-        {
-          "path": "frontend/src/components/ComingSoonSection.tsx",
-          "operation": "modify",
-          "description": "Ensure Blinkit logo is loaded from frontend/public/assets/generated/blinkit-logo.dim_200x200.png with proper sizing and alt text"
+          "description": "Update ProductCard to accept imagePath prop and construct the correct image URL. When rendering the product image, use the imagePath from backend data which will reference frontend/public/assets/generated/wireless-earbuds-white-blue.dim_800x800.png for the third product. Ensure image is displayed with appropriate dimensions and responsive behavior. Add alt text based on product name."
         }
       ]
     }
