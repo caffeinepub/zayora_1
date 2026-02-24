@@ -1,0 +1,137 @@
+{
+  "kind": "build_request",
+  "title": "Rebrand Zayora website from tech products to clothing/apparel brand",
+  "projectName": "Zayora Clothing",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-33",
+      "text": "Update the HeroSection component to reflect a clothing/apparel brand identity: change the tagline, description, and visual language to reference fashion, style, and clothing instead of tech products (earbuds/smartwatches). Keep the brand name 'ZAYORA' and founder attribution 'Yash Jaiswal'.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Change website change in clothe brand"
+        ]
+      },
+      "acceptanceCriteria": [
+        "HeroSection no longer references tech products, earbuds, or smartwatches",
+        "HeroSection tagline and description mention clothing, fashion, or apparel",
+        "Brand name ZAYORA and founder Yash Jaiswal remain visible"
+      ]
+    },
+    {
+      "id": "REQ-34",
+      "text": "Update the backend product catalog in main.mo to replace existing tech products (earbuds, smartwatches) with clothing/apparel products. Add at least 3 sample clothing products with appropriate names, descriptions, MRP prices, features relevant to clothing (e.g., material, size availability, style), and placeholder image paths pointing to frontend/public/assets/generated/.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Change website change in clothe brand"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Existing tech product entries (earbuds, smartwatches) are replaced with clothing items",
+        "At least 3 clothing products are defined with name, description, MRP, features, and image path",
+        "Product image paths reference frontend/public/assets/generated/ directory"
+      ]
+    },
+    {
+      "id": "REQ-35",
+      "text": "Update the ProductCard and ProductShowcase components to reflect clothing product context: adjust feature labels (e.g., show 'Material', 'Sizes Available', 'Style' instead of tech specs), and ensure product display UI suits apparel presentation.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Change website change in clothe brand"
+        ]
+      },
+      "acceptanceCriteria": [
+        "ProductCard no longer shows tech-specific feature labels",
+        "ProductCard displays clothing-relevant attributes where applicable",
+        "ProductShowcase grid renders clothing products correctly"
+      ]
+    },
+    {
+      "id": "REQ-36",
+      "text": "Update the AnnouncementBanner to replace the Holi festival tech offer text with clothing/fashion-themed promotional copy (e.g., referencing style, new collection, or fashion offers). Keep the scrolling animation and countdown timer intact.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Change website change in clothe brand"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Banner text references clothing, fashion, or apparel offers instead of generic tech deals",
+        "Scroll animation and countdown timer remain functional"
+      ]
+    },
+    {
+      "id": "REQ-37",
+      "text": "Generate product images for at least 3 clothing items to use as static assets in frontend/public/assets/generated/: a stylish casual t-shirt, a fashionable jacket, and a trendy kurta/ethnic wear item. Images should have a clean white/light background suitable for e-commerce display.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Change website change in clothe brand"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 3 clothing product images are generated and saved in frontend/public/assets/generated/",
+        "Images are referenced correctly by the backend product catalog image paths",
+        "Images render in ProductCard components on the homepage"
+      ]
+    },
+    {
+      "id": "REQ-38",
+      "text": "Update the ProductReviews component testimonials to reflect clothing/apparel customer satisfaction rather than tech product reviews. Update review text to mention clothing quality, fit, style, and fast delivery.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Change website change in clothe brand"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All review texts reference clothing, fabric quality, fit, or style",
+        "No review text mentions earbuds, smartwatches, or tech products",
+        "1000+ customers badge and star ratings remain"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not change the brand name ZAYORA or founder name Yash Jaiswal",
+    "Do not remove or modify files in frontend/src/hooks/ or frontend/src/components/ui",
+    "Keep the COD checkout system, delivery charge of ₹50, and WhatsApp order notification functionality intact",
+    "Keep the partner logos section, contact footer, RestaurantSection, and ComingSoonSection unchanged",
+    "Do not remove the countdown timer or scroll animation from AnnouncementBanner"
+  ],
+  "nonGoals": [
+    "Changing the color theme (orange and blue stays)",
+    "Adding new payment methods beyond Cash on Delivery",
+    "Building a size selector or cart system",
+    "Removing the restaurant section or partner logos",
+    "Modifying authentication or backend actor architecture"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Stylish casual cotton t-shirt in solid color on clean white background, front view, e-commerce style (clothing-tshirt.dim_800x800.png)",
+      "Fashionable men's or unisex jacket in dark color on clean white background, front view, e-commerce style (clothing-jacket.dim_800x800.png)",
+      "Trendy ethnic kurta in vibrant color on clean white background, front view, e-commerce style (clothing-kurta.dim_800x800.png)"
+    ],
+    "edits": []
+  }
+}

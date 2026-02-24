@@ -1,0 +1,93 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-herosection-component-to-reflect-a-clothing-apparel-brand-identity-change-the-tagline-description-and-visual-language-to-reference-fashion-style-and-clothing-instead-of-tech-products-earbuds-smartwatches-keep-the-brand-name-zayora-and-founder-attribution-yash-jaiswal",
+      "featureTitle": "Update the HeroSection component to reflect a clothing/apparel brand identity: change the tagline, description, and visual language to reference fashion, style, and clothing instead of tech products (earbuds/smartwatches). Keep the brand name 'ZAYORA' and founder attribution 'Yash Jaiswal'.",
+      "files": [
+        "frontend/src/components/HeroSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-33"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-productcard-and-productshowcase-components-to-reflect-clothing-product-context-adjust-feature-labels-e-g-show-material-sizes-available-style-instead-of-tech-specs-and-ensure-product-display-ui-suits-apparel-presentation",
+      "featureTitle": "Update the ProductCard and ProductShowcase components to reflect clothing product context: adjust feature labels (e.g., show 'Material', 'Sizes Available', 'Style' instead of tech specs), and ensure product display UI suits apparel presentation.",
+      "files": [
+        "frontend/src/components/ProductShowcase.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-35"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-announcementbanner-to-replace-the-holi-festival-tech-offer-text-with-clothing-fashion-themed-promotional-copy-e-g-referencing-style-new-collection-or-fashion-offers-keep-the-scrolling-animation-and-countdown-timer-intact",
+      "featureTitle": "Update the AnnouncementBanner to replace the Holi festival tech offer text with clothing/fashion-themed promotional copy (e.g., referencing style, new collection, or fashion offers). Keep the scrolling animation and countdown timer intact.",
+      "files": [
+        "frontend/src/components/AnnouncementBanner.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-36"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-generate-product-images-for-at-least-3-clothing-items-to-use-as-static-assets-in-frontend-public-assets-generated-a-stylish-casual-t-shirt-a-fashionable-jacket-and-a-trendy-kurta-ethnic-wear-item-images-should-have-a-clean-white-light-background-suitable-for-e-commerce-display",
+      "featureTitle": "Generate product images for at least 3 clothing items to use as static assets in frontend/public/assets/generated/: a stylish casual t-shirt, a fashionable jacket, and a trendy kurta/ethnic wear item. Images should have a clean white/light background suitable for e-commerce display.",
+      "files": [],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-37"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-productreviews-component-testimonials-to-reflect-clothing-apparel-customer-satisfaction-rather-than-tech-product-reviews-update-review-text-to-mention-clothing-quality-fit-style-and-fast-delivery",
+      "featureTitle": "Update the ProductReviews component testimonials to reflect clothing/apparel customer satisfaction rather than tech product reviews. Update review text to mention clothing quality, fit, style, and fast delivery.",
+      "files": [
+        "frontend/src/components/ProductReviews.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-38"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

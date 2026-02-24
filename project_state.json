@@ -1,0 +1,458 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 21,
+  "summary": "Zayora website - rebranding from tech products (bluetooth earbuds and smartwatches) to a clothing/apparel brand. Founded by Yash Jaiswal. Features product showcase, partner logos (YouTube, Bharat Ke Founder, MX Player, Blinkit, PhonePe), contact information, and coming soon section. Includes e-commerce functionality with product listing, cash on delivery checkout, and delivery charges. Company also owns a restaurant named 'ALL IS WELL .KANPUR'. Includes Holi festival promotion with free delivery offer and countdown timer.",
+  "architectural_notes": [
+    "Partner/platform logo integration section",
+    "E-commerce functionality with product listing and pricing",
+    "Cash on delivery payment method only",
+    "Product review section for customer testimonials",
+    "WhatsApp contact integration for customer care",
+    "Orange and blue dual-color theme for website",
+    "YouTube video integration for promotional content",
+    "Restaurant business section for 'ALL IS WELL .KANPUR'",
+    "PhonePe logo integration in partner section",
+    "Clothing/apparel brand focus replacing tech product showcase"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Stylish casual cotton t-shirt in solid color on clean white background, front view, e-commerce style (clothing-tshirt.dim_800x800.png)\n- Fashionable men's or unisex jacket in dark color on clean white background, front view, e-commerce style (clothing-jacket.dim_800x800.png)\n- Trendy ethnic kurta in vibrant color on clean white background, front view, e-commerce style (clothing-kurta.dim_800x800.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-homepage-layout-with-orange-tech-product-theme-featuring-hero-section-product-showcase-partner-logos-section-and-contact-information-footer",
+      "title": "Create homepage layout with orange tech product theme featuring hero section, product showcase, partner logos section, and contact information footer",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-company-information-section-displaying-founder-name-yash-jaiswal-and-company-name-zayora",
+      "title": "Add company information section displaying founder name 'Yash Jaiswal' and company name 'Zayora'",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-product-showcase-section-featuring-bluetooth-earbuds-and-smartwatch-with-product-images",
+      "title": "Create product showcase section featuring bluetooth earbuds and smartwatch with product images",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-partner-logos-section-displaying-youtube-logo-bharat-ke-founder-logo-and-mx-player-logo-in-full-color",
+      "title": "Add partner logos section displaying YouTube logo, Bharat Ke Founder logo, and MX Player logo in full color",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-coming-soon-on-blinkit-section-with-blinkit-logo-in-color",
+      "title": "Add 'Coming Soon on Blinkit' section with Blinkit logo in color",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-contact-information-section-displaying-customer-care-number-9919031626-and-email-zayora11-gmail-com",
+      "title": "Add contact information section displaying customer care number 9919031626 and email zayora11@gmail.com",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-all-generated-product-images-partner-logos-and-brand-assets-as-static-files-from-frontend-public-assets-generated-directory",
+      "title": "Render all generated product images, partner logos, and brand assets as static files from frontend/public/assets/generated directory",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-third-product-to-the-product-showcase-featuring-the-white-light-blue-wireless-earbuds-from-the-uploaded-image-with-mrp-499",
+      "title": "Add a third product to the product showcase featuring the white/light blue wireless earbuds from the uploaded image with MRP ₹499",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-cash-on-delivery-checkout-system-with-delivery-charge-of-50",
+      "title": "Implement cash on delivery checkout system with delivery charge of ₹50",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fetch-and-display-product-listings-from-backend-on-the-product-showcase-section",
+      "title": "Fetch and display product listings from backend on the product showcase section",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-uploaded-white-light-blue-wireless-earbuds-product-image-as-a-static-asset-from-frontend-public-assets-generated-directory",
+      "title": "Render the uploaded white/light blue wireless earbuds product image as a static asset from frontend/public/assets/generated directory",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-embed-the-youtube-video-https-youtu-be-r9po-shl-nk-si-6axf3zax-qock6bq-on-the-homepage-positioned-appropriately-within-the-existing-layout",
+      "title": "Embed the YouTube video (https://youtu.be/r9po-ShL-Nk?si=6Axf3Zax-qock6BQ) on the homepage, positioned appropriately within the existing layout",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-productreviews-component-that-displays-customer-reviews-with-reviewer-name-review-text-and-rating-out-of-5-stars",
+      "title": "Create a ProductReviews component that displays customer reviews with reviewer name, review text, and rating (out of 5 stars)",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-at-least-3-5-customer-testimonials-with-text-indicating-high-satisfaction-mentioning-that-over-1000-customers-have-purchased-1k-log-karde-hai-translates-to-1k-people-have-done-it",
+      "title": "Add at least 3-5 customer testimonials with text indicating high satisfaction, mentioning that over 1000 customers have purchased ('1k log karde hai' translates to '1k people have done it')",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-integrate-the-productreviews-component-into-app-tsx-positioning-it-between-the-productshowcase-and-partnerlogos-sections",
+      "title": "Integrate the ProductReviews component into App.tsx, positioning it between the ProductShowcase and PartnerLogos sections",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-whatsapp-contact-button-or-icon-in-the-contactfooter-component-that-links-to-whatsapp-with-customer-care-number-6392446165",
+      "title": "Add a WhatsApp contact button or icon in the ContactFooter component that links to WhatsApp with customer care number 6392446165",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-videosection-component-from-the-app-tsx-component-layout",
+      "title": "Remove the VideoSection component from the App.tsx component layout",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-delete-the-videosection-tsx-component-file-from-frontend-src-components",
+      "title": "Delete the VideoSection.tsx component file from frontend/src/components",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-application-theme-to-use-orange-and-blue-color-scheme-throughout-the-ui-modifying-the-tailwind-css-configuration-and-css-custom-properties-in-frontend-index-css-and-frontend-tailwind-config-js",
+      "title": "Update the application theme to use orange and blue color scheme throughout the UI, modifying the Tailwind CSS configuration and CSS custom properties in frontend/index.css and frontend/tailwind.config.js",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-embed-the-youtube-video-https-youtu-be-6sx2klvprxw-si-17np1eldxl8nclds-on-the-homepage-positioned-appropriately-within-the-existing-layout",
+      "title": "Embed the YouTube video https://youtu.be/6sx2KLvPRXw?si=17Np1ELdXl8ncLdS on the homepage, positioned appropriately within the existing layout",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-restaurant-information-section-displaying-the-company-owned-restaurant-name-all-is-well-kanpur-with-appropriate-styling",
+      "title": "Add a restaurant information section displaying the company-owned restaurant name 'ALL IS WELL .KANPUR' with appropriate styling",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-original-phonepe-logo-to-the-partner-logos-section-alongside-existing-logos-youtube-bharat-ke-founder-mx-player-blinkit",
+      "title": "Add the original PhonePe logo to the partner logos section alongside existing logos (YouTube, Bharat Ke Founder, MX Player, Blinkit)",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-scrolling-announcement-banner-displaying-holi-festival-offers-is-start-delivery-free-now-with-continuous-horizontal-scroll-animation",
+      "title": "Create a scrolling announcement banner displaying 'Holi 🌀 festival offers is start delivery free now' with continuous horizontal scroll animation",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-countdown-timer-to-the-offer-banner-showing-hours-minutes-and-seconds-in-a-24-hour-unlimited-loop-format-that-continuously-counts-from-24-00-00-down-to-00-00-00-and-then-resets",
+      "title": "Add a countdown timer to the offer banner showing hours, minutes, and seconds in a 24-hour unlimited loop format that continuously counts from 24:00:00 down to 00:00:00 and then resets",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-generated-phonepe-logo-as-a-static-asset-from-the-frontend-public-assets-generated-directory",
+      "title": "Render the generated PhonePe logo as a static asset from the frontend/public/assets/generated directory",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-whatsapp-notification-button-to-the-orderconfirmation-component-that-opens-whatsapp-with-pre-filled-message-containing-order-details-customer-name-address-phone-number-product-name-mrp-delivery-charge-to-phone-number-9919031626",
+      "title": "Add a WhatsApp notification button to the OrderConfirmation component that opens WhatsApp with pre-filled message containing order details (customer name, address, phone number, product name, MRP, delivery charge) to phone number 9919031626",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-herosection-component-to-reflect-a-clothing-apparel-brand-identity-change-the-tagline-description-and-visual-language-to-reference-fashion-style-and-clothing-instead-of-tech-products-earbuds-smartwatches-keep-the-brand-name-zayora-and-founder-attribution-yash-jaiswal",
+      "title": "Update the HeroSection component to reflect a clothing/apparel brand identity: change the tagline, description, and visual language to reference fashion, style, and clothing instead of tech products (earbuds/smartwatches). Keep the brand name 'ZAYORA' and founder attribution 'Yash Jaiswal'.",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-productcard-and-productshowcase-components-to-reflect-clothing-product-context-adjust-feature-labels-e-g-show-material-sizes-available-style-instead-of-tech-specs-and-ensure-product-display-ui-suits-apparel-presentation",
+      "title": "Update the ProductCard and ProductShowcase components to reflect clothing product context: adjust feature labels (e.g., show 'Material', 'Sizes Available', 'Style' instead of tech specs), and ensure product display UI suits apparel presentation.",
+      "reqIds": [
+        "REQ-35"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-announcementbanner-to-replace-the-holi-festival-tech-offer-text-with-clothing-fashion-themed-promotional-copy-e-g-referencing-style-new-collection-or-fashion-offers-keep-the-scrolling-animation-and-countdown-timer-intact",
+      "title": "Update the AnnouncementBanner to replace the Holi festival tech offer text with clothing/fashion-themed promotional copy (e.g., referencing style, new collection, or fashion offers). Keep the scrolling animation and countdown timer intact.",
+      "reqIds": [
+        "REQ-36"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-product-images-for-at-least-3-clothing-items-to-use-as-static-assets-in-frontend-public-assets-generated-a-stylish-casual-t-shirt-a-fashionable-jacket-and-a-trendy-kurta-ethnic-wear-item-images-should-have-a-clean-white-light-background-suitable-for-e-commerce-display",
+      "title": "Generate product images for at least 3 clothing items to use as static assets in frontend/public/assets/generated/: a stylish casual t-shirt, a fashionable jacket, and a trendy kurta/ethnic wear item. Images should have a clean white/light background suitable for e-commerce display.",
+      "reqIds": [
+        "REQ-37"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-productreviews-component-testimonials-to-reflect-clothing-apparel-customer-satisfaction-rather-than-tech-product-reviews-update-review-text-to-mention-clothing-quality-fit-style-and-fast-delivery",
+      "title": "Update the ProductReviews component testimonials to reflect clothing/apparel customer satisfaction rather than tech product reviews. Update review text to mention clothing quality, fit, style, and fast delivery.",
+      "reqIds": [
+        "REQ-38"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create orange-themed website layout for tech products",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add company info section with founder name (Yash Jaiswal)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Display product images for bluetooth earbuds and smartwatch",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add partner logos in color: YouTube, Bharat Ke Founder, MX Player",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add Blinkit logo with 'Coming Soon on Blinkit' section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add contact section with phone (9919031626) and email (zayora11@gmail.com)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add product listing with MRP ₹499",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Implement cash on delivery checkout system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add delivery charge of ₹50 to checkout",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Create backend data model for products with fields: id, name, description, image path, MRP, features array, and availability status",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Create order management system in backend to store customer orders with product details, delivery address, phone number, and order status",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Update MX Player logo to use original/official logo",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Replace the existing MX Player logo in the PartnerLogos section with the official/original MX Player logo",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Render the generated MX Player original logo as a static asset from frontend/public/assets/generated directory",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Add product review section displaying customer reviews",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Add WhatsApp icon/button for customer care with number 6392446165",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Update theme to orange and blue color scheme",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Embed YouTube video https://youtu.be/6sx2KLvPRXw?si=17Np1ELdXl8ncLdS on homepage",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Add restaurant information section for 'ALL IS WELL .KANPUR'",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-24",
+      "summary": "Add original PhonePe logo to partner logos section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Create announcement scroll banner displaying 'Holi 🌀 festival offers is start dilivery free now'",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-26",
+      "summary": "Add countdown timer showing hours, minutes, and seconds with 24 hours unlimited time display for offer duration",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-27",
+      "summary": "Add Product 'ultra pod air 31 Wireless earbuds' with MRP ₹499 and generate product image",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-28",
+      "summary": "Add a new product named 'Ultra Pod Air 31 Wireless Earbuds' to the backend product catalog with MRP ₹499, availability status set to true, appropriate description highlighting wireless earbuds features, and image path pointing to frontend/public/assets/generated/ultra-pod-air-31.dim_800x800.png",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-29",
+      "summary": "Render the generated Ultra Pod Air 31 Wireless Earbuds product image as a static asset from frontend/public/assets/generated directory in the ProductCard component",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-30",
+      "summary": "Add WhatsApp button to send order details (name, address, phone number) directly to 9919031626",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-31",
+      "summary": "Rebrand website from tech products (earbuds/smartwatches) to a clothing/apparel brand",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-33",
+      "summary": "Update the backend product catalog in main.mo to replace existing tech products (earbuds, smartwatches) with clothing/apparel products. Add at least 3 sample clothing products with appropriate names, descriptions, MRP prices, features relevant to clothing (e.g., material, size availability, style), and placeholder image paths pointing to frontend/public/assets/generated/.",
+      "reqIds": [
+        "REQ-34"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Zayora",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

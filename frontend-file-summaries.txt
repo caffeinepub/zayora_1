@@ -1,0 +1,19 @@
+{
+  "frontend/src/App.tsx": "Main application component with view state management for home, checkout, and order confirmation flows, displaying AnnouncementBanner, HeroSection, VideoSection, ProductShowcase, ProductReviews, PartnerLogos, RestaurantSection, ComingSoonSection, and ContactFooter on the homepage.",
+  "frontend/src/components/HeroSection.tsx": "Hero section for ZAYORA clothing brand featuring founder Yash Jaiswal attribution, fashion-focused tagline and description, and call-to-action buttons with orange-blue gradient background.",
+  "frontend/src/components/ProductShowcase.tsx": "Product showcase section fetching clothing products from backend with a fashion-focused heading and description, rendered in a responsive grid with loading and error states.",
+  "frontend/src/components/ProductCard.tsx": "Product card component displaying clothing product image, name, MRP, description, clothing-relevant features with check icons, and a Cash on Delivery checkout button.",
+  "frontend/src/components/PartnerLogos.tsx": "Partner logos section displaying YouTube, Bharat Ke Founder, MX Player, and PhonePe logos in a centered horizontal layout with hover effects.",
+  "frontend/src/components/ComingSoonSection.tsx": "Coming soon section announcing Blinkit availability with the Blinkit logo and blue-orange gradient background.",
+  "frontend/src/components/ContactFooter.tsx": "Footer component with contact information (phone, WhatsApp, and email), brand details, and caffeine.ai attribution with proper UTM tracking.",
+  "frontend/src/index.css": "Global styles with OKLCH-based orange and blue color system for both light and dark modes, featuring orange primary colors and blue secondary/accent colors with custom scroll animation keyframes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with custom orange and blue color palettes using OKLCH values for consistent theming across the application.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for fetching products (all and individual), placing orders, and retrieving order details with proper cache invalidation.",
+  "frontend/src/components/CheckoutForm.tsx": "Checkout form component collecting customer details (name, phone, address) with validation, displaying order summary with MRP and delivery charge breakdown, and handling order placement.",
+  "frontend/src/components/OrderConfirmation.tsx": "Order confirmation component displaying order success message, order ID, customer information, payment summary with delivery charge breakdown, Cash on Delivery payment reminder, and WhatsApp notification button that opens WhatsApp with pre-filled order details message to 9919031626.",
+  "frontend/src/components/VideoSection.tsx": "Responsive YouTube video embed component displaying the specified video with proper aspect ratio handling and orange-blue themed styling.",
+  "frontend/src/components/ProductReviews.tsx": "Customer reviews section with 5 clothing-focused testimonials referencing fabric quality, fit, and style, a 1000+ Happy Customers badge, and 5-star ratings.",
+  "frontend/src/hooks/useCountdownTimer.ts": "Custom React hook that manages a 24-hour countdown timer with automatic reset, returning hours, minutes, and seconds that update every second.",
+  "frontend/src/components/AnnouncementBanner.tsx": "Scrolling announcement banner with fashion/clothing-themed promotional copy, continuous horizontal scroll animation, and a real-time countdown timer.",
+  "frontend/src/components/RestaurantSection.tsx": "Restaurant information section component prominently displaying \"ALL IS WELL .KANPUR\" with orange and blue gradient background and store icon."
+}

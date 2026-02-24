@@ -1,0 +1,101 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Rebrand Zayora website from tech products to clothing/apparel brand",
+  "requirements": [
+    {
+      "id": "REQ-33",
+      "summary": "Update HeroSection component to reflect clothing/apparel brand identity with fashion-focused tagline and description while keeping ZAYORA brand name and Yash Jaiswal founder attribution",
+      "acceptanceCriteria": [
+        "HeroSection no longer references tech products, earbuds, or smartwatches",
+        "HeroSection tagline and description mention clothing, fashion, or apparel",
+        "Brand name ZAYORA and founder Yash Jaiswal remain visible"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Replace tech product messaging with clothing/apparel brand messaging. Update the tagline to reference fashion and style instead of tech innovation. Update the description text to highlight clothing quality, design, and fashion offerings while keeping the brand name 'ZAYORA' and founder attribution 'Yash Jaiswal' intact. Maintain the existing gradient background, layout structure, and call-to-action buttons."
+        }
+      ]
+    },
+    {
+      "id": "REQ-35",
+      "summary": "Update ProductCard and ProductShowcase components to display clothing-relevant attributes instead of tech specs",
+      "acceptanceCriteria": [
+        "ProductCard no longer shows tech-specific feature labels",
+        "ProductCard displays clothing-relevant attributes where applicable",
+        "ProductShowcase grid renders clothing products correctly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Update the features display logic to accommodate clothing-specific attributes. Ensure the component properly renders features like 'Material', 'Sizes Available', and 'Style' that will come from backend Product data. The component should continue to display product image from imagePath, name, MRP price, features array, and COD checkout button. Maintain the existing card styling and layout structure."
+        },
+        {
+          "path": "frontend/src/components/ProductShowcase.tsx",
+          "operation": "modify",
+          "description": "Update the section heading and intro text to reference clothing/apparel products instead of tech products. Change text like 'Premium Tech Products' to 'Premium Fashion Collection' or similar clothing-focused copy. Keep the grid layout, loading states, error handling, and ProductCard rendering logic unchanged."
+        }
+      ]
+    },
+    {
+      "id": "REQ-36",
+      "summary": "Update AnnouncementBanner to display clothing/fashion-themed promotional copy instead of Holi tech offer while keeping scroll animation and countdown timer",
+      "acceptanceCriteria": [
+        "Banner text references clothing, fashion, or apparel offers instead of generic tech deals",
+        "Scroll animation and countdown timer remain functional"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AnnouncementBanner.tsx",
+          "operation": "modify",
+          "description": "Replace the Holi festival tech offer text with clothing/fashion-themed promotional copy referencing new collections, style offers, or fashion deals. Keep the scrolling animation, countdown timer display logic (hours, minutes, seconds), and the useCountdownTimer hook integration completely unchanged. Update only the promotional message text within the scrolling content."
+        }
+      ]
+    },
+    {
+      "id": "REQ-37",
+      "summary": "Wire generated clothing product images into the frontend as static assets to replace existing tech product images",
+      "acceptanceCriteria": [
+        "At least 3 clothing product images are generated and saved in frontend/public/assets/generated/",
+        "Images are referenced correctly by the backend product catalog image paths",
+        "Images render in ProductCard components on the homepage"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/clothing-tshirt.dim_800x800.png",
+          "operation": "create",
+          "description": "Generated image asset: Stylish casual cotton t-shirt in solid color on clean white background, front view, e-commerce style. This image will be referenced by the backend product catalog for the t-shirt product entry. File dimensions 800x800 pixels suitable for ProductCard display."
+        },
+        {
+          "path": "frontend/public/assets/generated/clothing-jacket.dim_800x800.png",
+          "operation": "create",
+          "description": "Generated image asset: Fashionable men's or unisex jacket in dark color on clean white background, front view, e-commerce style. This image will be referenced by the backend product catalog for the jacket product entry. File dimensions 800x800 pixels suitable for ProductCard display."
+        },
+        {
+          "path": "frontend/public/assets/generated/clothing-kurta.dim_800x800.png",
+          "operation": "create",
+          "description": "Generated image asset: Trendy ethnic kurta in vibrant color on clean white background, front view, e-commerce style. This image will be referenced by the backend product catalog for the kurta product entry. File dimensions 800x800 pixels suitable for ProductCard display."
+        }
+      ]
+    },
+    {
+      "id": "REQ-38",
+      "summary": "Update ProductReviews component testimonials to reflect clothing customer satisfaction instead of tech product reviews",
+      "acceptanceCriteria": [
+        "All review texts reference clothing, fabric quality, fit, or style",
+        "No review text mentions earbuds, smartwatches, or tech products",
+        "1000+ customers badge and star ratings remain"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProductReviews.tsx",
+          "operation": "modify",
+          "description": "Replace all hardcoded testimonial review texts to reference clothing products, fabric quality, fit, style, comfort, and fast delivery. Update customer quotes to mention apparel satisfaction instead of tech product features. Keep the 5-star rating display, customer name attribution, review count badge showing '1000+ Happy Customers', and the overall section layout and styling unchanged."
+        }
+      ]
+    }
+  ]
+}
