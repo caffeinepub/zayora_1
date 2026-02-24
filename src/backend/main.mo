@@ -1,6 +1,8 @@
 import Map "mo:core/Map";
 import Nat "mo:core/Nat";
 
+
+
 actor {
   type Product = {
     id : Nat;
@@ -141,7 +143,26 @@ actor {
     available = true;
   };
 
+  let ultraPodAir31 : Product = {
+    id = 4;
+    name = "Ultra Pod Air 31 Wireless Earbuds";
+    description = "Experience true wireless freedom with Ultra Pod Air 31. Enjoy seamless Bluetooth connectivity, long battery life, and crystal-clear sound quality.";
+    imagePath = "/assets/generated/ultra-pod-air-31.dim_800x800.png";
+    mrp = 499;
+    features = [
+      "Long battery life",
+      "Seamless Bluetooth connectivity",
+      "True wireless stereo",
+      "Crystal-clear sound quality",
+      "Wireless earbuds",
+      "Built-in microphone",
+      "Noise cancellation",
+    ];
+    available = true;
+  };
+
   products.add(1, product1);
   products.add(2, product2);
   products.add(3, product3);
+  products.add(4, ultraPodAir31);
 };

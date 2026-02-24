@@ -39,6 +39,25 @@ export default function ContactFooter() {
               </a>
               
               <a
+                href="https://wa.me/916392446165"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-orange-600"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30">
+                  <img 
+                    src="/assets/generated/whatsapp-icon.dim_48x48.png" 
+                    alt="WhatsApp" 
+                    className="h-6 w-6"
+                  />
+                </div>
+                <div>
+                  <div className="text-xs text-muted-foreground">WhatsApp</div>
+                  <div className="font-medium text-foreground">6392446165</div>
+                </div>
+              </a>
+              
+              <a
                 href="mailto:zayora11@gmail.com"
                 className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-orange-600"
               >

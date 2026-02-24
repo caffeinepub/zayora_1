@@ -14,6 +14,11 @@ export default function PartnerLogos() {
       name: 'MX Player',
       image: '/assets/generated/mx-player-logo.dim_200x200.png',
       alt: 'MX Player Logo'
+    },
+    {
+      name: 'PhonePe',
+      image: '/assets/generated/phonepe-logo.dim_200x80.png',
+      alt: 'PhonePe Logo'
     }
   ];
 

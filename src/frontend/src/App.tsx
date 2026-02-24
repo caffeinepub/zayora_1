@@ -1,7 +1,11 @@
 import { useState } from 'react';
+import AnnouncementBanner from './components/AnnouncementBanner';
 import HeroSection from './components/HeroSection';
+import VideoSection from './components/VideoSection';
 import ProductShowcase from './components/ProductShowcase';
+import ProductReviews from './components/ProductReviews';
 import PartnerLogos from './components/PartnerLogos';
+import RestaurantSection from './components/RestaurantSection';
 import ComingSoonSection from './components/ComingSoonSection';
 import ContactFooter from './components/ContactFooter';
 import CheckoutForm from './components/CheckoutForm';
@@ -38,9 +42,13 @@ function App() {
     <div className="min-h-screen bg-background">
       {currentView === 'home' && (
         <>
+          <AnnouncementBanner />
           <HeroSection />
+          <VideoSection />
           <ProductShowcase onCheckout={handleCheckout} />
+          <ProductReviews />
           <PartnerLogos />
+          <RestaurantSection />
           <ComingSoonSection />
           <ContactFooter />
         </>

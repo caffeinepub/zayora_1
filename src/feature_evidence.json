@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-a-third-product-to-the-product-showcase-featuring-the-white-light-blue-wireless-earbuds-from-the-uploaded-image-with-mrp-499",
-      "featureTitle": "Add a third product to the product showcase featuring the white/light blue wireless earbuds from the uploaded image with MRP ₹499",
+      "featureId": "feature-add-a-whatsapp-notification-button-to-the-orderconfirmation-component-that-opens-whatsapp-with-pre-filled-message-containing-order-details-customer-name-address-phone-number-product-name-mrp-delivery-charge-to-phone-number-9919031626",
+      "featureTitle": "Add a WhatsApp notification button to the OrderConfirmation component that opens WhatsApp with pre-filled message containing order details (customer name, address, phone number, product name, MRP, delivery charge) to phone number 9919031626",
       "files": [
-        "frontend/src/components/ProductShowcase.tsx"
+        "frontend/src/components/OrderConfirmation.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,65 +15,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-8"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-cash-on-delivery-checkout-system-with-delivery-charge-of-50",
-      "featureTitle": "Implement cash on delivery checkout system with delivery charge of ₹50",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/CheckoutForm.tsx",
-        "frontend/src/components/OrderConfirmation.tsx",
-        "frontend/src/components/ProductCard.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-10"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-fetch-and-display-product-listings-from-backend-on-the-product-showcase-section",
-      "featureTitle": "Fetch and display product listings from backend on the product showcase section",
-      "files": [
-        "frontend/src/components/ProductShowcase.tsx",
-        "frontend/src/hooks/useQueries.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-12"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-render-the-uploaded-white-light-blue-wireless-earbuds-product-image-as-a-static-asset-from-frontend-public-assets-generated-directory",
-      "featureTitle": "Render the uploaded white/light blue wireless earbuds product image as a static asset from frontend/public/assets/generated directory",
-      "files": [
-        "frontend/src/components/ProductCard.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-13"
+        "REQ-32"
       ],
       "confidence": "high"
     }

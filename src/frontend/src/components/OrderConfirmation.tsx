@@ -1,4 +1,4 @@
-import { useOrder } from '../hooks/useQueries';
+import { useOrder, useProduct } from '../hooks/useQueries';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Separator } from './ui/separator';
@@ -14,6 +14,7 @@ const DELIVERY_CHARGE = 50;
 
 export default function OrderConfirmation({ orderId, onBackToHome }: OrderConfirmationProps) {
   const { data: order, isLoading, error } = useOrder(orderId);
+  const { data: product } = useProduct(order?.productId || null);
 
   if (isLoading) {
     return (
@@ -47,6 +48,26 @@ export default function OrderConfirmation({ orderId, onBackToHome }: OrderConfir
 
   const totalAmount = Number(order.totalAmount);
   const productMrp = totalAmount - DELIVERY_CHARGE;
+
+  const handleWhatsAppNotification = () => {
+    const message = `🛍️ *New Order Received*
+
+📦 *Product:* ${product?.name || 'Product'}
+💰 *MRP:* ₹${productMrp}
+🚚 *Delivery Charge:* ₹${DELIVERY_CHARGE}
+💵 *Total Amount:* ₹${totalAmount}
+
+👤 *Customer Details:*
+Name: ${order.customerName}
+📱 Phone: ${order.phone}
+📍 Address: ${order.address}
+
+🆔 Order ID: #${order.orderId.toString()}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/919919031626?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-background to-orange-50/30 py-12 dark:from-orange-950/10 dark:via-background dark:to-orange-950/10">
@@ -148,6 +169,20 @@ export default function OrderConfirmation({ orderId, onBackToHome }: OrderConfir
                   Please keep ₹{totalAmount} ready for payment upon delivery
                 </p>
               </div>
+
+              {/* WhatsApp Notification Button */}
+              <Button
+                onClick={handleWhatsAppNotification}
+                className="w-full bg-[#25D366] text-white hover:bg-[#20BA5A] dark:bg-[#25D366] dark:hover:bg-[#20BA5A]"
+                size="lg"
+              >
+                <img 
+                  src="/assets/generated/whatsapp-icon.dim_48x48.png" 
+                  alt="WhatsApp" 
+                  className="mr-2 h-5 w-5"
+                />
+                Send Order Details via WhatsApp
+              </Button>
             </CardContent>
             <CardFooter>
               <Button

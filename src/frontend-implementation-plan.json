@@ -1,90 +1,23 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add third product with e-commerce functionality",
+  "title": "Add WhatsApp order notification button to checkout confirmation",
   "requirements": [
     {
-      "id": "REQ-8",
-      "summary": "Add a third product to the product showcase featuring the white/light blue wireless earbuds from the uploaded image with MRP ₹499",
+      "id": "REQ-32",
+      "summary": "Add WhatsApp notification button to OrderConfirmation that opens WhatsApp with pre-filled order details message to 9919031626",
       "acceptanceCriteria": [
-        "Product card displays the white/light blue wireless earbuds image",
-        "Product shows MRP of ₹499",
-        "Product appears in the product showcase section alongside existing earbuds and smartwatch"
+        "Button appears on OrderConfirmation page after successful order placement",
+        "Button opens WhatsApp with pre-filled message to 9919031626",
+        "Message includes customer name, delivery address, phone number, product name, MRP, and delivery charge",
+        "Button uses WhatsApp green color scheme and WhatsApp icon",
+        "Works on both mobile and desktop devices"
       ],
       "file_operations": [
-        {
-          "path": "frontend/src/components/ProductShowcase.tsx",
-          "operation": "modify",
-          "description": "Update ProductShowcase to fetch products from backend using React Query and dynamically render ProductCard components. Replace hardcoded products with dynamic data from backend.getAllProducts(). Reference the generated image file at frontend/public/assets/generated/wireless-earbuds-white-blue.dim_800x800.png for the third product. Handle loading and error states appropriately."
-        }
-      ]
-    },
-    {
-      "id": "REQ-10",
-      "summary": "Implement cash on delivery checkout system with delivery charge of ₹50",
-      "acceptanceCriteria": [
-        "Each product card includes a 'Cash on Delivery' checkout button",
-        "Checkout flow clearly displays product MRP + ₹50 delivery charge as total",
-        "Checkout only accepts Cash on Delivery payment method",
-        "Order confirmation includes delivery charge breakdown"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/ProductCard.tsx",
-          "operation": "modify",
-          "description": "Add a 'Cash on Delivery' button to the ProductCard component. When clicked, navigate to checkout flow. Display product MRP clearly on the card. Pass product data (id, name, mrp, imagePath) to the checkout component via navigation state or props."
-        },
-        {
-          "path": "frontend/src/components/CheckoutForm.tsx",
-          "operation": "create",
-          "description": "Create checkout form component that collects customer name, delivery address, and phone number. Display order summary showing product MRP, ₹50 delivery charge, and total amount. Include form validation for required fields. On submission, call backend.placeOrder() with product ID and customer details. Handle success and error states, then navigate to order confirmation."
-        },
         {
           "path": "frontend/src/components/OrderConfirmation.tsx",
-          "operation": "create",
-          "description": "Create order confirmation component that displays order success message, order ID, product details, customer information, and cost breakdown (MRP + ₹50 delivery charge = total). Include a button to return to product showcase. Accept order data via navigation state or props."
-        },
-        {
-          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Wire CheckoutForm and OrderConfirmation components into the application. Add routing or conditional rendering to show CheckoutForm when user clicks checkout button and OrderConfirmation after successful order placement. Ensure proper navigation flow between ProductShowcase, CheckoutForm, and OrderConfirmation components."
-        }
-      ]
-    },
-    {
-      "id": "REQ-12",
-      "summary": "Fetch and display product listings from backend on the product showcase section",
-      "acceptanceCriteria": [
-        "Frontend queries backend for product list using React Query",
-        "Product showcase section dynamically renders ProductCard components from backend data",
-        "Loading and error states are handled appropriately"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/hooks/useQueries.ts",
-          "operation": "modify",
-          "description": "Add React Query hook useProducts() that calls backend.getAllProducts() to fetch product list. Return query object with data, isLoading, and error states. Configure appropriate cache time and refetch settings for product data."
-        },
-        {
-          "path": "frontend/src/components/ProductShowcase.tsx",
-          "operation": "modify",
-          "description": "Import and use the useProducts() hook to fetch products from backend. Render loading state while fetching, error state if query fails, and map over products array to render ProductCard components with data from backend (id, name, description, imagePath, mrp, features, available). Pass all required props to ProductCard including the product object."
-        }
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "summary": "Render the uploaded white/light blue wireless earbuds product image as a static asset from frontend/public/assets/generated directory",
-      "acceptanceCriteria": [
-        "Generated product image is saved in frontend/public/assets/generated/",
-        "Product card references the generated image file correctly",
-        "Image displays with appropriate dimensions and quality"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/ProductCard.tsx",
-          "operation": "modify",
-          "description": "Update ProductCard to accept imagePath prop and construct the correct image URL. When rendering the product image, use the imagePath from backend data which will reference frontend/public/assets/generated/wireless-earbuds-white-blue.dim_800x800.png for the third product. Ensure image is displayed with appropriate dimensions and responsive behavior. Add alt text based on product name."
+          "description": "Add WhatsApp notification button below order details that constructs a pre-filled message with customer name, address, phone, product name, MRP, and delivery charge (₹50). Use wa.me/919919031626 link format with URL-encoded message text. Include the WhatsApp icon from frontend/public/assets/generated/whatsapp-icon.dim_48x48.png. Style the button with WhatsApp green (#25D366) and ensure it is responsive for both mobile and desktop. The button should fetch product details using the product ID from the order object to include the product name in the message."
         }
       ]
     }

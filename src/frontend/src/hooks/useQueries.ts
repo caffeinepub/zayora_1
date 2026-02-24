@@ -15,6 +15,19 @@ export function useProducts() {
   });
 }
 
+export function useProduct(productId: bigint | null) {
+  const { actor, isFetching } = useActor();
+
+  return useQuery<Product | null>({
+    queryKey: ['product', productId?.toString()],
+    queryFn: async () => {
+      if (!actor || !productId) return null;
+      return actor.getProduct(productId);
+    },
+    enabled: !!actor && !isFetching && !!productId,
+  });
+}
+
 export function usePlaceOrder() {
   const { actor } = useActor();
   const queryClient = useQueryClient();
